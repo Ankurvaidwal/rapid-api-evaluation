@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loader from './loader';
 
 const withDataFetching = (WrappedComponent, apiUrl, chartConfig, headingText) => {
     return function WithDataFetching(props) {
         const [data, setData] = useState([]);
         const [interval, setInterval] = useState('year');
+        const [loading, setLoading] = useState(true);
 
         useEffect(() => {
             const fetchData = async () => {
+                setLoading(true);
                 try {
                     const response = await axios.get(apiUrl, {
                         params: { intervalType: interval }
@@ -15,6 +18,8 @@ const withDataFetching = (WrappedComponent, apiUrl, chartConfig, headingText) =>
                     setData(response.data);
                 } catch (error) {
                     console.error('Error fetching data:', error);
+                } finally {
+                    setLoading(false)
                 }
             };
 
@@ -48,6 +53,7 @@ const withDataFetching = (WrappedComponent, apiUrl, chartConfig, headingText) =>
                         <option value="quarter">Quarterly</option>
                         <option value="daily">Daily</option> */}
                     </select>
+                    {loading && <Loader />}
                 </div>
                 <WrappedComponent
                     data={data}
