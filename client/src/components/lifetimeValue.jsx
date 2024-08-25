@@ -7,7 +7,7 @@ const LifetimeValue = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/customers/cohortsvalue');
+        const response = await axios.get('https://rapid-api-evaluation.onrender.com/customers/cohortsvalue');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

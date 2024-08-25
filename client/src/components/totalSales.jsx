@@ -16,7 +16,7 @@ const chartConfig = {
   ]
 };
 
-const apiUrl = 'http://localhost:3000/orders/totalpriceset';
+const apiUrl = 'https://rapid-api-evaluation.onrender.com/orders/totalpriceset';
 const headingText = 'Total Sales Over Time:'
 
 const TotalSales = withDataFetching(BarchartComponent, apiUrl, chartConfig, headingText);

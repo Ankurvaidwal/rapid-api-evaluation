@@ -17,7 +17,7 @@ const chartConfig = {
   ]
 };
 
-const apiUrl = 'http://localhost:3000/orders/repeatorders';
+const apiUrl = 'https://rapid-api-evaluation.onrender.com/orders/repeatorders';
 
 const headingText = 'Number of Repeat Customers:'
 

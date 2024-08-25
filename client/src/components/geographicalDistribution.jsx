@@ -8,7 +8,7 @@ const GeographicalDistribution = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/customerbycity');
+      const response = await axios.get('https://rapid-api-evaluation.onrender.com/customerbycity');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);

@@ -17,7 +17,7 @@ const chartConfig = {
   ]
 };
 
-const apiUrl = 'http://localhost:3000/customers/track';
+const apiUrl = 'https://rapid-api-evaluation.onrender.com/customers/track';
 
 const headingText = 'New Customers Added Over Time: Track'
 
